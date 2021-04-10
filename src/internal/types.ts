@@ -1,5 +1,7 @@
 export type DeviceType = 'Handset' | 'Tablet' | 'Tv' | 'Desktop' | 'unknown';
 
+export type AppEnvironment = 'AppStore' | 'TestFlight' | 'Other';
+
 export type BatteryState = 'unknown' | 'unplugged' | 'charging' | 'full';
 
 export interface PowerState {

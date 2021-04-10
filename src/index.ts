@@ -12,6 +12,7 @@ import { DeviceInfoModule } from './internal/privateTypes';
 import type {
   AsyncHookResult,
   DeviceType,
+  AppEnvironment,
   LocationProviderInfo,
   PowerState,
 } from './internal/types';
@@ -673,7 +674,7 @@ export const [
   supportedPlatforms: ['ios'],
   getter: () => RNDeviceInfo.getCurrentAppEnvironment(),
   syncGetter: () => RNDeviceInfo.getCurrentAppEnvironmentSync(),
-  defaultValue: 'unknown',
+  defaultValue: 'Other',
 });
 
 const deviceInfoEmitter = new NativeEventEmitter(NativeModules.RNDeviceInfo);
@@ -777,7 +778,7 @@ export function useManufacturer(): AsyncHookResult<string> {
   return useOnMount(getManufacturer, 'unknown');
 }
 
-export type { AsyncHookResult, DeviceType, LocationProviderInfo, PowerState };
+export type { AsyncHookResult, DeviceType, LocationProviderInfo, PowerState, AppEnvironment };
 
 const deviceInfoModule: DeviceInfoModule = {
   getAndroidId,
