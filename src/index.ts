@@ -653,7 +653,7 @@ export const [
   getAvailableLocationProviders,
   getAvailableLocationProvidersSync,
 ] = getSupportedPlatformInfoFunctions({
-  supportedPlatforms: ['android', 'ios'],
+  supportedPlatforms: ['ios'],
   getter: () => RNDeviceInfo.getAvailableLocationProviders(),
   syncGetter: () => RNDeviceInfo.getAvailableLocationProvidersSync(),
   defaultValue: {},
@@ -665,6 +665,16 @@ export async function getDeviceToken() {
   }
   return 'unknown';
 }
+
+export const [
+  getCurrentAppEnvironment,
+  getCurrentAppEnvironmentSync,
+] = getSupportedPlatformInfoFunctions({
+  supportedPlatforms: ['android', 'ios'],
+  getter: () => RNDeviceInfo.getCurrentAppEnvironment(),
+  syncGetter: () => RNDeviceInfo.getCurrentAppEnvironmentSync(),
+  defaultValue: 'unknown',
+});
 
 const deviceInfoEmitter = new NativeEventEmitter(NativeModules.RNDeviceInfo);
 export function useBatteryLevel(): number | null {
@@ -792,6 +802,8 @@ const deviceInfoModule: DeviceInfoModule = {
   getCarrierSync,
   getCodename,
   getCodenameSync,
+  getCurrentAppEnvironment,
+  getCurrentAppEnvironmentSync,
   getDevice,
   getDeviceId,
   getDeviceName,

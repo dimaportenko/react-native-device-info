@@ -44,6 +44,8 @@ declare module.exports: {
   getCarrierSync: () => string,
   getCodename: () => Promise<string>,
   getCodenameSync: () => string,
+  getCurrentAppEnvironment: () => Promise<string>,
+  getCurrentAppEnvironmentSync: () => string,
   getDevice: () => Promise<string>,
   getDeviceId: () => string,
   getDeviceName: () => Promise<string>,

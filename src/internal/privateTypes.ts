@@ -55,6 +55,8 @@ interface ExposedNativeMethods {
   getCarrierSync: () => string;
   getCodename: () => Promise<string>;
   getCodenameSync: () => string;
+  getCurrentAppEnvironment: () => Promise<string>;
+  getCurrentAppEnvironmentSync: () => string;
   getDevice: () => Promise<string>;
   getDeviceName: () => Promise<string>;
   getDeviceNameSync: () => string;
