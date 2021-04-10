@@ -653,7 +653,7 @@ export const [
   getAvailableLocationProviders,
   getAvailableLocationProvidersSync,
 ] = getSupportedPlatformInfoFunctions({
-  supportedPlatforms: ['ios'],
+  supportedPlatforms: ['android', 'ios'],
   getter: () => RNDeviceInfo.getAvailableLocationProviders(),
   syncGetter: () => RNDeviceInfo.getAvailableLocationProvidersSync(),
   defaultValue: {},
@@ -670,7 +670,7 @@ export const [
   getCurrentAppEnvironment,
   getCurrentAppEnvironmentSync,
 ] = getSupportedPlatformInfoFunctions({
-  supportedPlatforms: ['android', 'ios'],
+  supportedPlatforms: ['ios'],
   getter: () => RNDeviceInfo.getCurrentAppEnvironment(),
   syncGetter: () => RNDeviceInfo.getCurrentAppEnvironmentSync(),
   defaultValue: 'unknown',
