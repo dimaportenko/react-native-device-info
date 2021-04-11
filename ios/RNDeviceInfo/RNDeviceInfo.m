@@ -793,13 +793,13 @@ RCT_EXPORT_METHOD(getAvailableLocationProviders:(RCTPromiseResolveBlock)resolve 
     resolve(self.getAvailableLocationProviders);
 }
 
-#pragma mark - EnvironmentUtil -
+#pragma mark - Installer Package Name -
 
-RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(getCurrentAppEnvironmentSync) {
+RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(getInstallerPackageNameSync) {
     return [EnvironmentValues objectAtIndex:[EnvironmentUtil currentAppEnvironment]];
 }
 
-RCT_EXPORT_METHOD(getCurrentAppEnvironment:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(getInstallerPackageName:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     resolve([EnvironmentValues objectAtIndex:[EnvironmentUtil currentAppEnvironment]]);
 }
 
